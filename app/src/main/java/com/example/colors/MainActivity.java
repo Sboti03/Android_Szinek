@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Init();
+        Random rnd = new Random();
+
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int red = rnd.nextInt(256);
+                int green = rnd.nextInt(256);
+                int blue = rnd.nextInt(256);
+                layout.setBackgroundColor(Color.rgb(red, green, blue));
+                String szoveges = String.format("(%d, %d, %d)", red, green, blue);
+                szoveg.setText(szoveges);
+            }
+        });
     }
 
     private void Init() {
@@ -32,30 +46,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private Color genColor() {
-        Color randomColor = new Color();
-        int r = (int) (Math.random() * 256);
-        int g = (int) (Math.random() * 256);
-        int b = (int) (Math.random() * 256);
-        int a = (int) (Math.random() * 256);
-        randomColor.alpha(a);
-        randomColor.red(r);
-        randomColor.green(g);
-        randomColor.blue(b);
-        return randomColor;
-    }
-
-    private void Timer(){
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                layout.setBackgroundColor();
-            }
-        }
-        Timer timer = new Timer("Timer");
-
-        long delay = 1000L;
-        timer.schedule();
-
-    }
 }
