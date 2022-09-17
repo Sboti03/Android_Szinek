@@ -1,21 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#000"
+    android:background="@color/white"
     android:id="@+id/layout"
     >
 
+    <com.google.android.material.slider.Slider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/redSlider"
+        />
+    <com.google.android.material.slider.Slider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenSlider"
+        android:layout_below="@id/redSlider"
+        />
+    <com.google.android.material.slider.Slider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueSlider"
+        android:layout_below="@id/greenSlider"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/redText"
+        android:layout_below="@id/blueSlider"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Red: 0"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenText"
+        android:layout_below="@id/redText"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Green: 0"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueText"
+        android:layout_below="@id/greenText"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Blue: 0"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="50sp"
+        android:paddingTop="50sp"
+        android:paddingLeft="100sp"
+        android:paddingRight="100sp"
         android:id="@+id/textSzin"
         android:text="(0, 0, 0)"
         android:layout_centerInParent="true"
         android:textSize="30sp"
+        android:background="@color/black"
         android:textColor="@color/white"
         />
 
